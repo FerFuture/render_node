@@ -1,0 +1,550 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Estilos para el encabezado (header) */
+header {
+  background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); /* Gradiente azul */
+  color: white;
+  text-align: center;
+  padding: 1rem 0; /* Aumentamos el padding superior e inferior */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+}
+
+/* Estilos generales para el encabezado (nav) */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribuye el espacio */
+  padding: 0 10%; /* Aumentamos el padding para no pegar los elementos a los bordes */
+}
+
+/* Estilos para los elementos del nav */
+nav .inicio img, nav .search-bar {
+  width: auto;
+  height: auto;
+}
+
+/* Estilos específicos para el ícono del menú */
+nav .hamburger-icon img {
+  width: 50px; /* Tamaño del ícono del menú (más grande) */
+  height: 50px;
+}
+
+/* Estilos específicos para la imagen de inicio */
+nav .inicio img {
+  width: 60px; /* Tamaño de la imagen de inicio (más grande) */
+  height: 60px;
+}
+
+/* Estilos específicos para la barra de búsqueda */
+nav .search-bar {
+  flex: 1; /* Esto hará que ocupe el espacio disponible */
+  text-align: center; /* Centra el contenido horizontalmente */
+}
+
+nav .search-bar input {
+  width: 100px; /* Ancho del campo de búsqueda reducido */
+  padding: 5px;
+  border: none; /* Quita el borde del campo de búsqueda */
+  border-radius: 20px; /* Agrega bordes redondeados */
+}
+
+nav .search-bar button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Estilos específicos para los enlaces "Ingresar" y "Carrito" */
+nav .acciones a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px; /* Separación entre "Ingresar" y "Carrito" */
+}
+
+/* Estiliza los elementos al pasar el mouse sobre ellos */
+nav .acciones a:hover {
+  color: #FFA500; /* Cambia el color al pasar el mouse */
+  transition: color 0.3s; /* Agrega una transición suave para el color */
+}
+
+/* Resto de tus estilos (main, h2, .productos, .producto, .producto img, footer) */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+
+main {
+  flex: 1;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.producto {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  transition: box-shadow 0.3s; /* Agrega una transición suave al sombreado */
+  border-radius: 10px; /* Agregar bordes redondeados a cada cuadro de producto */
+}
+
+.producto img {
+  max-width: 200px;
+  max-height: 200px;
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  background-color: #6f9fd8; /* Un azul claro más suave */
+  color: white; /* Color de texto blanco para un buen contraste */
+  text-align: center;
+  padding: 1rem 0; /* Espaciado adecuado */
+  font-size: 0.8rem; /* Tamaño de fuente legible */
+}
+
+footer a {
+  color: white; /* Enlaces en blanco para que se destaquen sobre el fondo azul */
+  text-decoration: none; /* Eliminar el subrayado de los enlaces */
+  transition: color 0.3s; /* Transición suave al cambiar de color */
+}
+
+footer a:hover {
+  color: #022c43; /* Cambio a un color más oscuro al pasar el ratón, pero no demasiado oscuro */
+}
+
+footer p {
+  margin: 0; /* Eliminar márgenes por defecto */
+}
+
+
+/* Estilos para la barra de búsqueda */
+nav .search-bar {
+  flex: 1; /* Esto hará que ocupe el espacio disponible */
+  text-align: center; /* Centra el contenido horizontalmente */
+}
+
+nav .search-bar input {
+  width: 300px; /* Ancho del campo de búsqueda aumentado (aproximadamente el doble) */
+  padding: 5px;
+  border: none; /* Quita el borde del campo de búsqueda */
+  border-radius: 20px; /* Agrega bordes redondeados */
+}
+
+nav .search-bar button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+
+/* Estilos generales para el encabezado (nav) */
+
+
+/* Agrega sombreado a los productos al pasar el mouse */
+.producto {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  transition: box-shadow 0.3s; /* Agrega una transición suave al sombreado */
+}
+
+.producto:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Agrega un sombreado al pasar el mouse */
+}
+
+/* Estilos para el contenedor del carrito */
+.carrito-container {
+  position: relative;
+}
+
+/* Estilos para el ícono de carrito */
+.carrito-link img {
+  width: 30px; /* Ajusta el tamaño del ícono según tus necesidades */
+  height: auto;
+}
+
+/* Estilos para el contador del carrito */
+.contador-carrito {
+  background-color: #ff3d00; /* Color más llamativo para el contador */
+  border-radius: 50%; /* Hacemos el contador completamente redondo */
+  padding: 0.2em 0.6em; /* Ajustamos el padding para que sea un círculo perfecto */
+  position: absolute; /* Posicionamos en relación a su padre */
+  top: 10px; /* Ajustamos la posición para que no esté pegado al borde */
+  right: 10px;
+  font-size: 0.8rem; /* Ajustamos el tamaño de la fuente del contador */
+}
+
+/* Estilos para el contenedor del carrito */
+.carrito-container {
+  position: relative;
+}
+
+/* Estilos para el ícono de carrito */
+.carrito-link img {
+  width: 30px; /* Ajusta el tamaño del ícono según tus necesidades */
+  height: auto;
+}
+
+
+
+
+/* -------------------------------------------------------- */
+/* Estilo para el modal */
+/* Estilo para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  color: black;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px; /* Agregar esquinas redondeadas */
+}
+
+/* Estilo para el botón de cierre del modal */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* Otros estilos según tus necesidades */
+
+
+
+#carrito-productos {
+  overflow-y: scroll;
+  height: 300px; /* Ajusta el alto del contenedor de productos */
+  padding: 20px;
+}
+
+#total-precio {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilos para el rectángulo de "Finalizar Compra" */
+.finalizar-compra {
+  background-color: #008CBA; /* Color de fondo */
+  color: white; /* Color de texto */
+  padding: 12px 24px; /* Espaciado interno */
+  border: none; /* Elimina el borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave al cambiar de color */
+}
+
+.finalizar-compra:hover {
+  background-color: #005f73; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para la barra de desplazamiento en el contenedor de productos */
+#carrito-productos {
+  overflow-y: scroll;
+  height: 300px; /* Ajusta el alto del contenedor de productos */
+  padding: 20px;
+  scrollbar-width: thin; /* Ancho de la barra de desplazamiento (puede ser 'auto' en algunos navegadores) */
+}
+
+#carrito-productos::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento en navegadores basados en WebKit (por ejemplo, Chrome) */
+}
+
+#carrito-productos::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color de la barra de desplazamiento */
+  border-radius: 4px; /* Bordes redondeados de la barra de desplazamiento */
+}
+
+#carrito-productos::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color de la barra de desplazamiento al pasar el mouse */
+}
+
+.imagen-carrito {
+  max-width: 100px; /* Establece el ancho máximo */
+  max-height: 100px; /* Establece la altura máxima */
+}
+
+/* ... Tu código existente ... */
+
+/* Estilos para el menú de hamburguesa */
+.hamburguesa-icon {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.hamburguesa-icon img {
+  width: 30px;
+  height: auto;
+  transition: filter 0.3s; /* Agrega una transición suave al filtro para el efecto de brillo */
+}
+
+.hamburguesa-icon:hover img {
+  background-color: rgba(255, 255, 255, 0.1); /* Cambio sutil al pasar el ratón */
+}
+
+/* Estilos para el menú desplegable */
+.menu-desplegable {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%); /* Aplica el gradiente */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+  transition: left 0.3s ease;
+  display: flex; /* Usamos flexbox para alinear las categorías */
+  flex-direction: column; /* Las categorías se muestran en una columna */
+  align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+  padding: 0; /* Remueve el padding por defecto */
+  list-style: none; /* Remueve los estilos de lista por defecto */
+}
+
+
+
+.menu-desplegable a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  border-bottom: 1px solid #80d8ff; /* Agrega un divisor sutil entre elementos */
+}
+
+.menu-desplegable a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Cambio sutil de color al pasar el ratón */
+}
+
+/* Estilos para el submenú */
+.submenu {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Usa todo el ancho disponible */
+
+}
+
+/* Oculta el contenido del submenú por defecto y lo posiciona a la derecha */
+.submenu-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Esto posicionará el submenú justo al final del menú desplegable */
+  background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); /* Gradiente horizontal para los submenús */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  overflow-y: auto; /* Habilita el desplazamiento vertical si es necesario */
+  max-height: 400px; /* Ajusta la altura máxima del submenú */
+  padding-left: 20px; /* Espaciado para anidar subcategorías */
+}
+
+/* Muestra el submenú cuando se pasa el mouse sobre la opción de menú */
+.submenu:hover .submenu-content {
+  display: block;
+}
+
+/* Estilos para los enlaces dentro del submenú */
+.submenu-content a {
+  color: white; /* Color de texto para coincidir con el menú principal */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #80d8ff; /* Agrega un divisor sutil entre elementos */
+}
+
+/* Cambia el color de fondo del enlace al pasar el mouse */
+.submenu-content a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Cambio sutil al pasar el ratón */
+  
+}
+
+.menu-desplegable a {
+  display: block; /* Hace que los enlaces llenen el contenedor */
+  align-items: center;
+  padding: 10px; /* Espaciado interno para los enlaces */
+  color: white;
+  text-decoration: none; /* Remueve el subrayado de los enlaces */
+  transition: background-color 0.3s; /* Transición suave para el cambio de fondo */
+}
+
+.menu-desplegable a i {
+  margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+/* Puedes ajustar el tamaño de los iconos con la clase 'fas' si es necesario */
+.fas {
+  font-size: 20px; /* Ajusta el tamaño según tus necesidades */
+}
+
+button {
+  background-color: #008CBA; /* Color de fondo */
+  color: white; /* Color de texto */
+  padding: 12px 24px; /* Espaciado interno */
+  border: none; /* Elimina el borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave al cambiar de color */
+}
+
+button:hover {
+  background-color: #005f73; /* Color de fondo al pasar el mouse */
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif; /* Fuente más moderna */
+  line-height: 1.6; /* Espaciado entre líneas */
+}
+
+.producto {
+  background-color: #ffffff; /* Color de fondo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  margin: 20px; /* Espaciado alrededor de las tarjetas */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para sombra y transformación */
+}
+
+.producto:hover {
+  transform: translateY(-5px); /* Levanta la tarjeta ligeramente al pasar el mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más prominente al pasar el mouse */
+}
+
+body {
+  background-color: #f4f4f4; /* Color de fondo suave */
+  background-image: url('https://files.oaiusercontent.com/file-VRQfq7mRk5hUfbayLiAK9loC?se=2023-11-15T21%3A23%3A37Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D40c86f94-dd68-476d-9770-635d30315ac9.webp&sig=JxBfgBK1D4JoDI9TIXMj8ImmxZkikTs7%2BeqRZPt65zs%3D'); 
+  background-size: cover; /* Cubre todo el fondo */
+  background-attachment: fixed; /* La imagen de fondo es fija al hacer scroll */
+}
+
+
+
+nav .search-bar button {
+  background-color: #4facfe; /* Botón con color sólido que contraste con el gradiente */
+}
+
+nav .carrito-link img {
+  width: 50px; /* Ajuste del tamaño del ícono del carrito */
+  height: 50px;
+}
+
+nav .carrito-container, nav .acciones a {
+  display: flex;
+  align-items: center; /* Centra los ítems verticalmente */
+  gap: 0.5rem; /* Espacio entre íconos y texto */
+}
+
+nav .search-bar button {
+  background-color: #4facfe; /* Botón con color sólido que contraste con el gradiente */
+}
+
+nav .search-bar input, nav .search-bar button {
+  border: 2px solid white; /* Agrega un borde para definir mejor los elementos */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 0.5rem; /* Aumentamos el padding para que sean más altos */
+  margin: 0 0.5rem; /* Añadimos un margen horizontal */
+}
+
+.loader {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijo en la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  z-index: 1000; /* Asegura que el loader esté por encima de todo */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  display: flex; /* Usa flexbox para centrar el spinner */
+}
+
+.loader:after {
+  content: "";
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+.agregar[disabled], .agregar.disabled {
+  background-color: #cccccc; /* Gris claro para indicar que no está disponible */
+  color: #666666; /* Texto en gris oscuro para mejorar el contraste */
+  cursor: not-allowed; /* El cursor 'not-allowed' indica que el botón no es clickeable */
+  border: 1px solid #999999; /* Un borde que complemente el gris para definir los límites del botón */
+}
+
+/* Opcional: Cambia el color al pasar el ratón para mantener la interactividad */
+.agregar[disabled]:hover, .agregar.disabled:hover {
+  background-color: #bbbbbb; /* Un tono de gris ligeramente diferente al pasar el ratón */
+}
+
+#categoryBackground {
+  background-image: url('https://th.bing.com/th/id/OIG.yySlb5WnG2Dx5SKUDP0q?w=1024&h=1024&rs=1&pid=ImgDetMain');
+  background-size: 100% auto;
+  background-position: center;
+  padding: 50px;
+  box-sizing: border-box;
+  width: 100%; /* Asegura que el div ocupe todo el ancho */
+}
+
+#titulo-categoria{
+  color:white;
+  margin: 0;
+}
