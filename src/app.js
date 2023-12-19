@@ -5,12 +5,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(bodyParser.json()); // Analiza JSON
 app.use(bodyParser.urlencoded({ extended: true })); // Analiza datos codificados en URL
 
-app.get('/', (req, res) => {
-  res.send('¡Hola, mundo!');
-});
 
 
 // Definir la ruta absoluta a la carpeta 'public' dentro de la carpeta 'frontend'
