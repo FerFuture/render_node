@@ -62,9 +62,8 @@ router.post('/api/pay', async (req, res) => {
 
       res.send("Pago procesado exitosamente");
     } catch (error) {
-      // Si hay algún error, realiza el rollback de la transacción
       await t.rollback();
-      throw error; // Lanza el error para que sea manejado en el catch externo
+      throw error; 
     }
   } catch (error) {
     console.error('Error al procesar el pago:', error);
@@ -107,12 +106,12 @@ router.get('/api/productos/subcategoria/:subcategoryId', async (req, res) => {
   }
 });
 
-// En tu archivo del backend (puede ser parte de tu archivo router.js)
+
 router.get('/api/productos/buscar', async (req, res) => {
-  const searchTerm = req.query.termino; // Obtén el término de búsqueda desde la consulta
+  const searchTerm = req.query.termino; 
 
   try {
-    // Realiza la lógica de búsqueda en la base de datos y devuelve los resultados
+    
     const productosEncontrados = await buscarProductosPorNombre(searchTerm);
     res.json(productosEncontrados);
   } catch (error) {
@@ -128,7 +127,7 @@ async function buscarProductosPorNombre(searchTerm) {
       SELECT * FROM productos
       WHERE name ILIKE :searchTerm
     `, {
-      replacements: { searchTerm: `%${searchTerm}%` }, // Utiliza ILIKE para búsqueda case-insensitive
+      replacements: { searchTerm: `%${searchTerm}%` }, 
       type: sequelize.QueryTypes.SELECT
     });
 
@@ -138,10 +137,10 @@ async function buscarProductosPorNombre(searchTerm) {
   }
 }
 
-// En tu archivo del backend (puede ser parte de tu archivo router.js)
+
 router.get('/api/productos/ofertas', async (req, res) => {
   try {
-    // Realiza la lógica de búsqueda en la base de datos y devuelve los resultados de ofertas
+    
     const productosOfertas = await buscarProductosEnOferta();
     res.json(productosOfertas);
   } catch (error) {
@@ -153,7 +152,7 @@ router.get('/api/productos/ofertas', async (req, res) => {
 
 async function buscarProductosEnOferta() {
   try {
-    // Realiza la consulta SQL para buscar productos en oferta (precio menor o igual a 500)
+    
     const productosOfertas = await sequelize.query(`
       SELECT * FROM productos
       WHERE price <= 500
